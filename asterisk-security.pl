@@ -25,8 +25,8 @@ while (<MYINPUTFILE>) {
         my @badip = "";
         @badip = split(':', $1);
         push(@failhost,$badip[0]);
-		
-	if ($line =~ m/\' failed for \'(.*?)\' \(callid: (.*?)\) - No matching peer found/) {
+    }		
+    if ($line =~ m/\' failed for \'(.*?)\' \(callid: (.*?)\) - No matching peer found/) {
         my @badip = "";
         @badip = split(':', $1);
         push(@failhost,$badip[0]);
