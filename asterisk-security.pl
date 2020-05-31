@@ -36,6 +36,13 @@ while (<MYINPUTFILE>) {
         @badip = split(':', $1);
         push(@failhost,$badip[0]);
     }
+    
+    if ($line =~ m/\' failed for \'(.*?)\' - Wrong password/) {
+        my @badip = "";
+        @badip = split(':', $1);
+        push(@failhost,$badip[0]);
+    }
+    
 }
 
 my $blockedhosts = `iptables -n -L INPUT`;
